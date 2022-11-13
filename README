@@ -1,1 +1,3 @@
-1st version
+Do not edit styles.css file.
+Please use only styles.less file to add any CSS.
+The server will automatically convert to and compile styles.css file.
