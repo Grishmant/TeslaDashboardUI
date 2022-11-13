@@ -1,0 +1,182 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #242526;
+}
+body .screen {
+  border: 1px solid #E9F1FD;
+  background-color: #E9F1FD;
+  height: 800px;
+  width: 1200px;
+  padding: 16px 22px;
+  position: relative;
+}
+.header {
+  box-shadow: 8px 8px 16px #CFD8E5, -2px -2px 32px rgba(0, 0, 0, 0.25);
+  background: #E9F1FD;
+  height: 60px;
+  border-radius: 12px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 200;
+  font-size: 24px;
+}
+.header .header_left {
+  display: flex;
+  gap: 32px;
+}
+.main {
+  height: 685px;
+  display: flex;
+}
+.main .left-main {
+  box-shadow: 8px 8px 16px #CFD8E5, -2px -2px 32px rgba(0, 0, 0, 0.25);
+  background: #E9F1FD;
+  height: 685px;
+  width: 656px;
+  border-radius: 12px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main .left-main .title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+}
+.main .left-main .temp_ctrls .options div:first-child,
+.main .left-main .car_ctrls .options div:first-child,
+.main .left-main .conn_ctrls .options div:first-child {
+  border-radius: 12px 0 0 12px;
+}
+.main .left-main .temp_ctrls .options div:last-child,
+.main .left-main .car_ctrls .options div:last-child,
+.main .left-main .conn_ctrls .options div:last-child {
+  border-radius: 0 12px 12px 0;
+}
+.main .left-main .temp_ctrls .options .option,
+.main .left-main .car_ctrls .options .option,
+.main .left-main .conn_ctrls .options .option {
+  background: #E9F1FD;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), -4px -8px 16px rgba(218, 230, 236, 0.5);
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main .left-main .temp_ctrls {
+  top: 0;
+}
+.main .left-main .temp_ctrls .title {
+  margin-top: 0;
+}
+.main .left-main .temp_ctrls .options {
+  display: flex;
+  gap: 35px;
+}
+.main .left-main .temp_ctrls .options .temp1 {
+  display: flex;
+}
+.main .left-main .temp_ctrls .options .temp1 .left_arr,
+.main .left-main .temp_ctrls .options .temp1 .right_arr {
+  width: 50px;
+}
+.main .left-main .temp_ctrls .options .temp1 .temp_indicator {
+  width: 90px;
+  font-size: 48px;
+  font-weight: 400px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.main .left-main .temp_ctrls .options .temp2,
+.main .left-main .temp_ctrls .options .temp3 {
+  display: flex;
+}
+.main .left-main .temp_ctrls .options .temp2 *,
+.main .left-main .temp_ctrls .options .temp3 * {
+  width: 90px;
+}
+.main .left-main .car_ctrls .options,
+.main .left-main .conn_ctrls .options {
+  display: flex;
+}
+.main .left-main .car_ctrls .options .option,
+.main .left-main .conn_ctrls .options .option {
+  height: 120px;
+  width: 124px;
+}
+.main .left-main .conn_ctrls .option {
+  width: 155px !important;
+}
+.temp_ctrls,
+.car_ctrls,
+.conn_ctrls {
+  width: 100%;
+  height: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.temp_ctrls .container,
+.car_ctrls .container,
+.conn_ctrls .container {
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+  left: 18px;
+  transform: translateY(80px);
+  transition: all 0.4s ease-out;
+}
+.temp_ctrls .container.show,
+.car_ctrls .container.show,
+.conn_ctrls .container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fan_ctrls,
+.side_mirr_ctrls {
+  background: #E9F1FD;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), -4px -8px 16px rgba(218, 230, 236, 0.5);
+  height: 0;
+  width: 620px;
+  border-radius: 12px;
+  opacity: 0;
+  transform: translateY(-60px);
+}
+.fan_ctrls.show,
+.side_mirr_ctrls.show {
+  transition: all 0.4s ease-out;
+  height: 418px;
+  opacity: 1;
+  transform: translateY(0);
+}
+.fan_ctrls.show .heading,
+.side_mirr_ctrls.show .heading {
+  width: inherit;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 6px;
+}
+.fan_ctrls.show .heading .title,
+.side_mirr_ctrls.show .heading .title {
+  font-weight: 900;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 24px;
+}
+.fan_ctrls.show .close,
+.side_mirr_ctrls.show .close {
+  background: #E9F1FD;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), -4px -8px 16px rgba(218, 230, 236, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 12px;
+}

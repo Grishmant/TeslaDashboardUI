@@ -1,0 +1,174 @@
+// variables
+@primary-color: #E9F1FD;
+@primary-font: 'Plus Jakarta Sans', sans-serif;
+@primary-text-color: #242526;
+@primary-box-shadow: 8px 8px 16px #CFD8E5, -2px -2px 32px rgba(0, 0, 0, 0.25);
+@secondary-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), -4px -8px 16px rgba(218, 230, 236, 0.5);
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: @primary-text-color;
+    .screen {
+        border: 1px solid @primary-color;
+        background-color: @primary-color;
+        height: 800px;
+        width: 1200px;
+        padding: 16px 22px;
+        position: relative;
+    }
+}
+.header {
+    box-shadow: @primary-box-shadow;
+    background: @primary-color;
+    height: 60px;
+    border-radius: 12px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: @primary-font;
+    font-weight: 200;
+    font-size: 24px;
+    .header_left {
+        display: flex;
+        gap: 32px;
+    }
+}
+.main {
+    height: 685px;
+    display: flex;
+    .left-main {
+        box-shadow: @primary-box-shadow;
+        background: @primary-color;
+        height: 685px;
+        width: 656px;
+        border-radius: 12px;
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .title {
+            font-family: @primary-font;
+            font-weight: 900;
+            font-size: 24px;
+        }
+        .temp_ctrls, .car_ctrls, .conn_ctrls {
+            .options {
+                div:first-child {
+                    border-radius: 12px 0 0 12px;
+                }
+                div:last-child {
+                    border-radius: 0 12px 12px 0;
+                }
+                .option {
+                    background: @primary-color;
+                    box-shadow: @secondary-box-shadow;
+                    height: 120px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            
+        }
+        .temp_ctrls {
+            top: 0;
+            .title { margin-top: 0 }
+            .options {
+                display: flex;
+                gap: 35px;
+                .temp1 {
+                    display: flex;
+                    .left_arr, .right_arr  { width: 50px; }
+                    .temp_indicator {
+                        width: 90px;
+                        font-size: 48px;
+                        font-weight: 400px;
+                        font-family: @primary-font;
+                     }
+                }
+                .temp2, .temp3 {
+                    display: flex;
+                    * {
+                        width: 90px;
+                    }
+                }
+            }
+        }
+        .car_ctrls, .conn_ctrls {
+            .options {
+                display: flex;
+                .option {
+                    height: 120px;
+                    width: 124px;
+                }
+            }
+        }
+        .conn_ctrls .option {
+            width: 155px !important;
+        }
+    }
+}
+
+// animation helper CSS
+.temp_ctrls, .car_ctrls, .conn_ctrls {
+    width: 100%;
+    height: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    .container {
+        width: 100%;
+        position: absolute;
+        opacity: 0;
+        left: 18px;
+        transform: translateY(80px);
+        transition: all 0.4s ease-out;
+        &.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+// popup controls CSS
+.fan_ctrls, .side_mirr_ctrls {
+    background: @primary-color;
+    box-shadow: @secondary-box-shadow;
+    height: 0;
+    width: 620px;
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateY(-60px);
+    &.show {
+        transition: all 0.4s ease-out;
+        height: 418px;
+        opacity: 1;
+        transform: translateY(0);
+        .heading {
+            width: inherit;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin: 6px;
+            .title {
+                font-weight: 900;
+                font-family: @primary-font;
+                font-size: 24px;
+            }
+        }
+        .close {
+            background: @primary-color;
+            box-shadow: @secondary-box-shadow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 50px;
+            border-radius: 12px;
+        }
+    }
+}
