@@ -5,6 +5,9 @@ body {
   height: 100vh;
   color: #242526;
 }
+body * {
+  box-sizing: border-box;
+}
 body .screen {
   border: 1px solid #E9F1FD;
   background-color: #E9F1FD;
@@ -95,7 +98,7 @@ body .screen {
 }
 .main .left-main .temp_ctrls .options {
   display: flex;
-  gap: 35px;
+  gap: 18px;
 }
 .main .left-main .temp_ctrls .options .temp1 {
   display: flex;
@@ -125,10 +128,10 @@ body .screen {
 .main .left-main .car_ctrls .options .option,
 .main .left-main .conn_ctrls .options .option {
   height: 120px;
-  width: 124px;
+  width: 117px;
 }
 .main .left-main .conn_ctrls .option {
-  width: 155px !important;
+  width: 146px !important;
 }
 .main .right-main {
   box-shadow: 8px 8px 16px #CFD8E5, -2px -2px 32px rgba(0, 0, 0, 0.25);
@@ -258,6 +261,7 @@ body .screen {
   border-radius: 12px;
   opacity: 0;
   transform: translateY(-60px);
+  width: calc(100% - 32px);
 }
 .temp_ctrls_opts.show,
 .car_ctrls_opts.show {
@@ -307,6 +311,73 @@ body .screen {
 .side_mirror_ctrls.show {
   display: block;
 }
+.fan_ctrls {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  padding: 0 30px;
+}
+.fan_ctrls .front_ctrls,
+.fan_ctrls .rear_ctrls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fan_ctrls .front_ctrls p,
+.fan_ctrls .rear_ctrls p {
+  font-weight: bold ;
+}
+.fan_ctrls .front_ctrls .slider,
+.fan_ctrls .rear_ctrls .slider {
+  background-image: linear-gradient(#001AFF, #001AFF) !important;
+  width: 200px;
+  background-size: 50% 100%;
+}
+.fan_ctrls .front_ctrls .slider.disabled::-webkit-slider-thumb,
+.fan_ctrls .rear_ctrls .slider.disabled::-webkit-slider-thumb {
+  background: #A3A9B1 !important;
+}
+.fan_ctrls .front_ctrls .slider::-webkit-slider-thumb,
+.fan_ctrls .rear_ctrls .slider::-webkit-slider-thumb {
+  background: #001AFF !important;
+}
+.fan_ctrls .front_ctrls .slider_text,
+.fan_ctrls .rear_ctrls .slider_text {
+  width: 210px;
+}
+.fan_ctrls .front_ctrls .fan_direction img,
+.fan_ctrls .rear_ctrls .fan_direction img {
+  width: 35px;
+  height: 35px;
+}
+.fan_ctrls .front_ctrls .fan_direction .highlight,
+.fan_ctrls .rear_ctrls .fan_direction .highlight {
+  background-color: #001AFF;
+}
+.fan_ctrls .front_ctrls .fan_direction .highlight.disable,
+.fan_ctrls .rear_ctrls .fan_direction .highlight.disable {
+  background-color: gray;
+}
+.fan_ctrls .front_ctrls .fan_direction > div,
+.fan_ctrls .rear_ctrls .fan_direction > div {
+  display: flex;
+}
+.fan_ctrls .front_ctrls .fan_direction > div > div,
+.fan_ctrls .rear_ctrls .fan_direction > div > div {
+  background-color: #E9F1FD;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), -4px -8px 16px rgba(218, 230, 236, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 55px;
+  width: 70px;
+}
+.fan_ctrls .front_ctrls .fan_direction > div > div:first-child,
+.fan_ctrls .rear_ctrls .fan_direction > div > div:first-child {
+  border-radius: 6px 0 0 6px;
+}
+.fan_ctrls .front_ctrls .fan_direction > div > div:last-child,
+.fan_ctrls .rear_ctrls .fan_direction > div > div:last-child {
+  border-radius: 0 6px 6px 0;
+}
 .seat_heat_ctrls {
   height: 100%;
 }
@@ -327,7 +398,6 @@ body .screen {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Input Thumb */
 }
 .seat_heat_ctrls .seats .front > div .seat.off,
 .seat_heat_ctrls .seats .rear > div .seat.off {
@@ -342,8 +412,11 @@ body .screen {
   z-index: 2;
   pointer-events: none;
 }
-.seat_heat_ctrls .seats .front > div .slider,
-.seat_heat_ctrls .seats .rear > div .slider {
+.seat_heat_ctrls .steering_wheel {
+  width: 30px;
+  height: 48px !important;
+}
+.slider {
   -webkit-appearance: none;
   margin-top: 13px;
   width: 140px;
@@ -352,42 +425,34 @@ body .screen {
   background: #A3A9B1;
   background-image: linear-gradient(#FF3636, #FF3636);
   border-radius: 5px;
-  background-size: 70% 100%;
+  background-size: 0% 100%;
   background-repeat: no-repeat;
 }
-.seat_heat_ctrls .seats .front > div .slider.disabled,
-.seat_heat_ctrls .seats .rear > div .slider.disabled {
-  background-color: #A3A9B1;
-  background-image: linear-gradient(#A3A9B1, #A3A9B1);
+.slider.disabled {
+  background-color: #A3A9B1 !important;
+  background-image: linear-gradient(#A3A9B1, #A3A9B1) !important;
 }
-.seat_heat_ctrls .seats .front > div .slider::-webkit-slider-thumb,
-.seat_heat_ctrls .seats .rear > div .slider::-webkit-slider-thumb {
+/* Input Thumb */
+.slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 20px;
   width: 20px;
   border-radius: 50%;
   background: #FF3636;
 }
-.seat_heat_ctrls .seats .front > div .slider.disabled::-webkit-slider-thumb,
-.seat_heat_ctrls .seats .rear > div .slider.disabled::-webkit-slider-thumb {
-  background: #A3A9B1;
+.slider.disabled::-webkit-slider-thumb {
+  background: #A3A9B1 !important;
 }
-.seat_heat_ctrls .seats .front > div .slider_text,
-.seat_heat_ctrls .seats .rear > div .slider_text {
+.slider_text {
   width: 150px;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
-.seat_heat_ctrls .seats .front > div .slider_text .dot,
-.seat_heat_ctrls .seats .rear > div .slider_text .dot {
+.slider_text .dot {
   width: 5px;
   height: 5px;
   background: #000;
   border-radius: 50%;
-}
-.seat_heat_ctrls .steering_wheel {
-  width: 30px;
-  height: 48px !important;
 }

@@ -78,7 +78,8 @@
                         <p class="title">Car Controls</p>
                         <div class="options">
                             <div class="option">
-                            
+                                <img src="images/door_lock.svg" alt="lock">
+                                <span class="metaphor_desc">Door Lock</span>
                             </div>
                             <div class="option side_mirr">
                                 <img src="images/side_mirror.svg" alt="side mirrors">
@@ -102,16 +103,20 @@
                         <p class="title">Handsfree and Connectivity</p>
                         <div class="options">
                             <div class="option">
-                            
+                                <img src="images/phone.svg" alt="phone">
+                                <span class="metaphor_desc">Phone</span>
                             </div>
                             <div class="option">
-            
+                                <img src="images/bluetooth.svg" alt="bluetooth">
+                                <span class="metaphor_desc">Bluetooth</span>
                             </div>
                             <div class="option">
-            
+                                <img src="images/microphone.svg" alt="microphone">
+                                <span class="metaphor_desc">Microphone</span>
                             </div>
                             <div class="option">
-            
+                                <img src="images/navigation.svg" alt="navigation">
+                                <span class="metaphor_desc">Navigation</span>
                             </div>
                         </div>
                     </div>
@@ -121,8 +126,52 @@
                 <div class="temp_ctrls_opts">
                     <div class="fan_ctrls">
                         <div class="heading">
-                            <div class="close" id="close">X</div>
+                            <div class="close" style="margin-left: -25px" id="close">X</div>
                             <span class="title">Fan Settings</span>
+                        </div>
+                        <p style="margin-bottom: 0" class="title">Front</p>
+                        <div class="front_ctrls">
+                            <div class="fan_speed">
+                                <p>Fan Speed</p>
+                                <input type="range" class="slider fan_speed_slider fan_speed_slider1" step="1" min="0" max="4">
+                                    <div class="slider_text">
+                                        <span>off</span>
+                                        <div class="dot"></div>
+                                        <div class="dot"></div>
+                                        <div class="dot"></div>
+                                        <span>max</span>
+                                    </div>
+                            </div>
+                            <div class="fan_direction">
+                                <p>Fan Direction</p>
+                                <div class="fan_direction1">
+                                    <div class="fan_dir_icon highlight"><img src="images/fan_direction1.svg" alt="rewind"></div>
+                                    <div class="fan_dir_icon"><img src="images/fan_direction2.svg" alt="play"></div>
+                                    <div class="fan_dir_icon"><img src="images/fan_direction3.svg" alt="forward"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="margin-bottom: 0; margin-top: 40px;" class="title">Rear</p>
+                        <div class="rear_ctrls">
+                            <div class="fan_speed">
+                                <p>Fan Speed</p>
+                                <input type="range" class="slider fan_speed_slider fan_speed_slider2" step="1" min="0" max="4">
+                                    <div class="slider_text">
+                                        <span>off</span>
+                                        <div class="dot"></div>
+                                        <div class="dot"></div>
+                                        <div class="dot"></div>
+                                        <span>max</span>
+                                    </div>
+                            </div>
+                            <div class="fan_direction">
+                                <p>Fan Direction</p>
+                                <div class="fan_direction2">
+                                    <div class="fan_dir_icon highlight"><img src="images/fan_direction1.svg" alt="rewind"></div>
+                                    <div class="fan_dir_icon"><img src="images/fan_direction2.svg" alt="play"></div>
+                                    <div class="fan_dir_icon"><img src="images/fan_direction3.svg" alt="forward"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="seat_heat_ctrls">
@@ -134,62 +183,61 @@
                             <div class="front">
                                 <div class="">
                                     <img class="steering_wheel" src="images/steering_wheel.svg" alt="">
-                                    <img class="seat" src="images/carseat.svg" alt="">
-                                    <input type="range" class="slider" step="1" min="0" max="3">
+                                    <img class="seat off" src="images/carseat.svg" alt="">
+                                    <input type="range" class="slider seat_heat_slider disabled" step="1" min="0" max="3" value="0">
                                     <div class="slider_text">
                                         <span>off</span>
-                                        <!-- <span>.</span> -->
                                         <div class="dot"></div>
                                         <div class="dot"></div>
                                         <span>max</span>
                                     </div>
-                                    <p class="seat_text">ON</p>
+                                    <p class="seat_text">OFF</p>
                                 </div>
                                 <div class="">
-                                    <img style="margin-top: 48px" class="seat" src="images/carseat.svg" alt="">
-                                    <input type="range" class="slider" step="1" min="0" max="3">
+                                    <img style="margin-top: 48px" class="seat off" src="images/carseat.svg" alt="">
+                                    <input type="range" class="slider seat_heat_slider disabled" step="1" min="0" max="3" value="0">
                                     <div class="slider_text">
                                         <span>off</span>
                                         <div class="dot"></div>
                                         <div class="dot"></div>
                                         <span>max</span>
                                     </div>
-                                    <p class="seat_text">ON</p>
+                                    <p class="seat_text">OFF</p>
                                 </div>
                             </div>
                             <div class="rear">
                                 <div class="">
-                                    <img class="seat" src="images/carseat.svg" alt="">
-                                    <input type="range" class="slider" step="1" min="0" max="3">
+                                    <img class="seat off" src="images/carseat.svg" alt="">
+                                    <input type="range" class="slider seat_heat_slider disabled" step="1" min="0" max="3" value="0">
                                     <div class="slider_text">
                                         <span>off</span>
                                         <div class="dot"></div>
                                         <div class="dot"></div>
                                         <span>max</span>
                                     </div>
-                                    <p class="seat_text">ON</p>
+                                    <p class="seat_text">OFF</p>
                                 </div>
                                 <div class="">
-                                    <img class="seat" src="images/carseat.svg" alt="">
-                                    <input type="range" class="slider" step="1" min="0" max="3">
+                                    <img class="seat off" src="images/carseat.svg" alt="">
+                                    <input type="range" class="slider seat_heat_slider disabled" step="1" min="0" max="3" value="0">
                                     <div class="slider_text">
                                         <span>off</span>
                                         <div class="dot"></div>
                                         <div class="dot"></div>
                                         <span>max</span>
                                     </div>
-                                    <p class="seat_text">ON</p>
+                                    <p class="seat_text">OFF</p>
                                 </div>
                                 <div class="">
-                                    <img class="seat" src="images/carseat.svg" alt="">
-                                    <input type="range" class="slider" step="1" min="0" max="3">
+                                    <img class="seat off" src="images/carseat.svg" alt="">
+                                    <input type="range" class="slider seat_heat_slider disabled" step="1" min="0" max="3" value="0">
                                     <div class="slider_text">
                                         <span>off</span>
                                         <div class="dot"></div>
                                         <div class="dot"></div>
                                         <span>max</span>
                                     </div>
-                                    <p class="seat_text">ON</p>
+                                    <p class="seat_text">OFF</p>
                                 </div>
                             </div>
                         </div>
