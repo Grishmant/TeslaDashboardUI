@@ -4,6 +4,7 @@ body {
   align-items: center;
   height: 100vh;
   color: #242526;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 body * {
   box-sizing: border-box;
@@ -315,6 +316,39 @@ body .screen {
 .seat_heat_ctrls.show,
 .side_mirror_ctrls.show {
   display: block;
+}
+.side_mirror_ctrls {
+  position: relative;
+  height: 100%;
+}
+.side_mirror_ctrls .mirror_selection {
+  display: flex;
+  justify-content: space-around;
+}
+.side_mirror_ctrls .mirror_selection .left_mirror_sel img {
+  transform: scaleX(-1);
+}
+.side_mirror_ctrls .mirror_selection .left_mirror_sel,
+.side_mirror_ctrls .mirror_selection .right_mirror_sel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.side_mirror_ctrls .mirror_selection img {
+  width: 180px;
+  height: 180px;
+}
+.side_mirror_ctrls .mirror_selection span {
+  font-weight: bold;
+  font-size: 20px;
+}
+.side_mirror_ctrls .inst_div {
+  position: absolute;
+  bottom: 40px;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+  font-size: 18px;
 }
 .fan_ctrls {
   font-family: 'Plus Jakarta Sans', sans-serif;
