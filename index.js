@@ -6,6 +6,7 @@ $(document).ready(function() {
     calculateHeightOfListContainer();
 
     $(".fan, .seat_heat").on('click', function(e) {
+        $(".option").removeClass("selected");
         $(".car_ctrls").removeClass('show');
         $(".car_ctrls .container").removeClass('show');
         $(".conn_ctrls").removeClass('show');
@@ -17,7 +18,8 @@ $(document).ready(function() {
         } else {
             $(".seat_heat_ctrls").addClass('show');
             $(".fan_ctrls").removeClass('show');
-        }
+        } 
+        $(this).addClass("selected");
     });
 
     $(".side_mirr").on('click', function(e) {
