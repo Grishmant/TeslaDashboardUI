@@ -107,6 +107,11 @@ body .screen {
 .main .left-main .temp_ctrls .options .temp1 .right_arr {
   width: 50px;
 }
+.main .left-main .temp_ctrls .options .temp1 .left_arr img,
+.main .left-main .temp_ctrls .options .temp1 .right_arr img {
+  width: 35px;
+  pointer-events: none;
+}
 .main .left-main .temp_ctrls .options .temp1 .temp_indicator {
   width: 90px;
   font-size: 48px;
@@ -132,10 +137,6 @@ body .screen {
 }
 .main .left-main .conn_ctrls .option {
   width: 146px !important;
-}
-
-.main .left-main .options .option.selected {
-  background-color: #001AFF;
 }
 .main .right-main {
   box-shadow: 8px 8px 16px #CFD8E5, -2px -2px 32px rgba(0, 0, 0, 0.25);

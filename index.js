@@ -22,6 +22,17 @@ $(document).ready(function() {
         $(this).addClass("selected");
     });
 
+    // AC temperature
+    $(".left_arr, .right_arr").on('click', function(ev) {
+        let classList = ev.target.classList;
+        let currentVal = $("#temperature").text();
+        let change = classList.contains('left_arr') ? -1 : 1;
+        if(parseInt(currentVal) + change >= 55 && parseInt(currentVal) + change <= 85) {
+            $("#temperature").text(parseInt(currentVal) + change);
+        }
+    });
+
+    // side mirrors 
     $(".side_mirr").on('click', function(e) {
         $(".temp_ctrls").removeClass('show');
         $(".temp_ctrls .container").removeClass('show');
