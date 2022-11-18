@@ -33,6 +33,7 @@ body .screen {
 .main {
   height: 685px;
   display: flex;
+  gap: 18px;
 }
 .main .left-main {
   box-shadow: 8px 8px 16px #CFD8E5, -2px -2px 32px rgba(0, 0, 0, 0.25);
@@ -128,6 +129,100 @@ body .screen {
 }
 .main .left-main .conn_ctrls .option {
   width: 155px !important;
+}
+.main .right-main {
+  box-shadow: 8px 8px 16px #CFD8E5, -2px -2px 32px rgba(0, 0, 0, 0.25);
+  background: #E9F1FD;
+  height: 685px;
+  width: 525px;
+  border-radius: 12px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.main .right-main .map_div {
+  padding: 12px;
+  border-bottom: 1px solid #C9D1DA;
+}
+.main .right-main .map_div .map_img {
+  width: 490px;
+  height: 380px;
+}
+.main .right-main .music_player {
+  display: flex;
+  width: 95%;
+  padding: 16px;
+  gap: 20px;
+}
+.main .right-main .music_player .logo {
+  width: 140px;
+  height: 150px;
+}
+.main .right-main .music_player .music_ctrls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+.main .right-main .music_player .music_ctrls .volume_ctrls {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  gap: 6px;
+}
+.main .right-main .music_player .music_ctrls .volume_ctrls img {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  padding: 2px;
+}
+.main .right-main .music_player .music_ctrls .music_bottom {
+  display: flex;
+  justify-content: space-between;
+}
+.main .right-main .music_player .music_ctrls .music_bottom .artist p {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 20px;
+}
+.main .right-main .music_player .music_ctrls .music_bottom .artist p:first-child {
+  font-size: 28px;
+}
+.main .right-main .music_player .music_ctrls .music_bottom .music_player_ctrls {
+  display: flex;
+}
+.main .right-main .music_player .music_ctrls .music_bottom .music_player_ctrls img {
+  width: 35px;
+  height: 35px;
+}
+.main .right-main .music_player .music_ctrls .music_bottom .music_player_ctrls > div {
+  background-color: #E9F1FD;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), -4px -8px 16px rgba(218, 230, 236, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 55px;
+  width: 70px;
+}
+.main .right-main .music_player .music_ctrls .music_bottom .music_player_ctrls > div:first-child {
+  border-radius: 6px 0 0 6px;
+}
+.main .right-main .music_player .music_ctrls .music_bottom .music_player_ctrls > div:last-child {
+  border-radius: 0 6px 6px 0;
+}
+.main .right-main .footer {
+  position: absolute;
+  bottom: 25px;
+  width: inherit;
+  display: flex;
+  justify-content: space-evenly;
+}
+.main .right-main .footer img {
+  width: 35px;
+  height: 35px;
 }
 .temp_ctrls,
 .car_ctrls,

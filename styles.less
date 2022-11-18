@@ -40,6 +40,7 @@ body {
 .main {
     height: 685px;
     display: flex;
+    gap: 18px;
     .left-main {
         box-shadow: @primary-box-shadow;
         background: @primary-color;
@@ -123,6 +124,100 @@ body {
         }
         .conn_ctrls .option {
             width: 155px !important;
+        }
+    }
+    .right-main {
+        box-shadow: @primary-box-shadow;
+        background: @primary-color;
+        height: 685px;
+        width: 525px;
+        border-radius: 12px;
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        .map_div {
+            padding: 12px;
+            border-bottom: 1px solid #C9D1DA;
+            .map_img {
+                width: 490px;
+                height: 380px;
+            }
+        }
+        .music_player {
+            display: flex;
+            width: 95%;
+            padding: 16px;
+            gap: 20px;
+            .logo {
+                width: 140px;
+                height: 150px;
+            }
+            .music_ctrls {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 100%;
+                .volume_ctrls {
+                    display: flex;
+                    width: 100%;
+                    justify-content: flex-end;
+                    gap: 6px;
+                    img {
+                        width: 45px;
+                        height: 45px;
+                        border: 1px solid #000;
+                        border-radius: 50%;
+                        padding: 2px;
+                    }
+                }
+                .music_bottom {
+                    display: flex;
+                    justify-content: space-between;
+                    .artist p {
+                        margin: 0;
+                        font-family: @primary-font;
+                        font-size: 20px;
+                        &:first-child {
+                            font-size: 28px;
+                        }
+                    }
+                    .music_player_ctrls {
+                        display: flex;
+                        img {
+                            width: 35px;
+                            height: 35px;
+                        }
+                        & > div {
+                            background-color: @primary-color;
+                            box-shadow: @secondary-box-shadow;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            height: 55px;
+                            width: 70px;
+                            &:first-child {
+                                border-radius: 6px 0 0 6px;
+                            }
+                            &:last-child {
+                                border-radius: 0 6px 6px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .footer {
+            position: absolute;
+            bottom: 25px;
+            width: inherit;
+            display: flex;
+            justify-content: space-evenly;
+            img {
+                width: 35px;
+                height: 35px;
+            }
         }
     }
 }
