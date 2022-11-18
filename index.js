@@ -120,3 +120,87 @@ function addAllElements() {
     $(".seat_heat_ctrls").removeClass('show');
     $(".side_mirror_ctrls").removeClass('show');
 }
+
+var previousValue1 = -1, previousValue2 = -1, previousValue3 = -1, previousValue4 = -1, previousValue5 = -1, previousValue6 = -1, previousValue7 = -1;
+function playAudio(val, sliderNumber) {
+    audio = new Audio();
+    if (sliderNumber == 1) {
+        if (val < previousValue1) {
+            audio.src = "audio/button-decrease.mp3";
+            console.log("decrease");
+        } else {
+            audio.src = "audio/button-increase.mp3";
+            console.log("increase");
+        }
+        previousValue1 = val
+    }
+    
+    if (sliderNumber == 2) {
+        if (val < previousValue2) {
+            audio.src = "audio/button-decrease.mp3";
+            console.log("decrease");
+        } else {
+            audio.src = "audio/button-increase.mp3";
+            console.log("increase");
+        }
+        previousValue2 = val
+    }
+
+    if (sliderNumber == 3) {
+        if (val < previousValue3) {
+            audio.src = "audio/button-decrease.mp3";
+            console.log("decrease");
+        } else {
+            audio.src = "audio/button-increase.mp3";
+            console.log("increase");
+        }
+        previousValue3 = val
+    }
+
+    if (sliderNumber == 4) {
+        if (val < previousValue4) {
+            audio.src = "audio/button-decrease.mp3";
+            console.log("decrease");
+        } else {
+            audio.src = "audio/button-increase.mp3";
+            console.log("increase");
+        }
+        previousValue4 = val
+    }
+
+    if (sliderNumber == 5) {
+        if (val < previousValue5) {
+            audio.src = "audio/button-decrease.mp3";
+            console.log("decrease");
+        } else {
+            audio.src = "audio/button-increase.mp3";
+            console.log("increase");
+        }
+        previousValue5 = val
+    }
+
+    if (sliderNumber == 6) {
+        if (val < previousValue5) {
+            audio.src = "audio/button-decrease.mp3";
+            console.log("decrease");
+        } else {
+            audio.src = "audio/button-increase.mp3";
+            console.log("increase");
+        }
+        previousValue5 = val
+    }
+
+    if (sliderNumber == 7) {
+        if (val < previousValue5) {
+            audio.src = "audio/button-decrease.mp3";
+            console.log("decrease");
+        } else {
+            audio.src = "audio/button-increase.mp3";
+            console.log("increase");
+        }
+        previousValue5 = val
+    }
+	audio.loop = false;
+	audio.play();
+    previousValue = val;
+}
