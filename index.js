@@ -32,6 +32,9 @@ $(document).ready(function() {
     // seat heat slider
     $('.seat_heat_slider').on('input', function(ev) {
         let val = ev.target.value;
+        let classList = ev.target.classList;
+        let sliderNo = classList.contains('seat1') ? 1 : classList.contains('seat2') ? 2 : classList.contains('seat3') ? 3 : classList.contains('seat4') ? 4 : 5;
+        playAudio(val, sliderNo);
         if(val == 0) {
             let parent = ev.target.parentElement;
             $(parent).find(".seat").addClass('off');
