@@ -1,8 +1,3 @@
-/*
-Do not change anything in this file.
-All CSS changes must be done in styles.less file
-*/
-
 body {
   display: flex;
   justify-content: center;
@@ -146,8 +141,8 @@ body .screen {
   opacity: 1;
   transform: translateY(0);
 }
-.fan_ctrls,
-.side_mirr_ctrls {
+.temp_ctrls_opts,
+.car_ctrls_opts {
   background: #E9F1FD;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), -4px -8px 16px rgba(218, 230, 236, 0.5);
   height: 0;
@@ -156,29 +151,29 @@ body .screen {
   opacity: 0;
   transform: translateY(-60px);
 }
-.fan_ctrls.show,
-.side_mirr_ctrls.show {
+.temp_ctrls_opts.show,
+.car_ctrls_opts.show {
   transition: all 0.4s ease-out;
   height: 418px;
   opacity: 1;
   transform: translateY(0);
 }
-.fan_ctrls.show .heading,
-.side_mirr_ctrls.show .heading {
+.temp_ctrls_opts.show .heading,
+.car_ctrls_opts.show .heading {
   width: inherit;
   display: flex;
   align-items: center;
   gap: 24px;
   margin: 6px;
 }
-.fan_ctrls.show .heading .title,
-.side_mirr_ctrls.show .heading .title {
+.temp_ctrls_opts.show .heading .title,
+.car_ctrls_opts.show .heading .title {
   font-weight: 900;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 24px;
 }
-.fan_ctrls.show .close,
-.side_mirr_ctrls.show .close {
+.temp_ctrls_opts.show .close,
+.car_ctrls_opts.show .close {
   background: #E9F1FD;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), -4px -8px 16px rgba(218, 230, 236, 0.5);
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -189,4 +184,100 @@ body .screen {
   height: 50px;
   width: 50px;
   border-radius: 12px;
+}
+.fan_ctrls,
+.seat_heat_ctrls {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  display: none;
+}
+.fan_ctrls.show,
+.seat_heat_ctrls.show {
+  display: block;
+}
+.seat_heat_ctrls {
+  height: 100%;
+}
+.seat_heat_ctrls .seats {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.seat_heat_ctrls .seats .front,
+.seat_heat_ctrls .seats .rear {
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+.seat_heat_ctrls .seats .front > div,
+.seat_heat_ctrls .seats .rear > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Input Thumb */
+}
+.seat_heat_ctrls .seats .front > div .seat.off,
+.seat_heat_ctrls .seats .rear > div .seat.off {
+  filter: contrast(0);
+}
+.seat_heat_ctrls .seats .front > div .seat_text,
+.seat_heat_ctrls .seats .rear > div .seat_text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #fff;
+  font-weight: bold;
+  margin-top: -95px;
+  z-index: 2;
+  pointer-events: none;
+}
+.seat_heat_ctrls .seats .front > div .slider,
+.seat_heat_ctrls .seats .rear > div .slider {
+  -webkit-appearance: none;
+  margin-top: 13px;
+  width: 140px;
+  margin-right: 15px;
+  height: 7px;
+  background: #A3A9B1;
+  background-image: linear-gradient(#FF3636, #FF3636);
+  border-radius: 5px;
+  background-size: 70% 100%;
+  background-repeat: no-repeat;
+}
+.seat_heat_ctrls .seats .front > div .slider.disabled,
+.seat_heat_ctrls .seats .rear > div .slider.disabled {
+  background-color: #A3A9B1;
+  background-image: linear-gradient(#A3A9B1, #A3A9B1);
+}
+.seat_heat_ctrls .seats .front > div .slider::-webkit-slider-thumb,
+.seat_heat_ctrls .seats .rear > div .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #FF3636;
+}
+.seat_heat_ctrls .seats .front > div .slider.disabled::-webkit-slider-thumb,
+.seat_heat_ctrls .seats .rear > div .slider.disabled::-webkit-slider-thumb {
+  background: #A3A9B1;
+}
+.seat_heat_ctrls .seats .front > div .slider_text,
+.seat_heat_ctrls .seats .rear > div .slider_text {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.seat_heat_ctrls .seats .front > div .slider_text .dot,
+.seat_heat_ctrls .seats .rear > div .slider_text .dot {
+  width: 5px;
+  height: 5px;
+  background: #000;
+  border-radius: 50%;
+}
+.seat_heat_ctrls .steering_wheel {
+  width: 30px;
+  height: 48px !important;
 }

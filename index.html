@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+
+    <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="index.js"></script>
 
@@ -60,7 +63,7 @@
                                     <img src="images/fan.png" alt="fan">
                                 </div>
                                 <div class="seat_heat option">
-    
+                                    <img src="images/seat_heating.png" alt="fan">
                                 </div>
                             </div>
                         </div>
@@ -109,13 +112,85 @@
                 </div>
 
                 <!-- popup controls -->
-                <div class="fan_ctrls">
-                    <div class="heading">
-                        <div class="close" id="close">X</div>
-                        <span class="title">Fan Settings</span>
+                <div class="temp_ctrls_opts">
+                    <div class="fan_ctrls">
+                        <div class="heading">
+                            <div class="close" id="close">X</div>
+                            <span class="title">Fan Settings</span>
+                        </div>
+                    </div>
+                    <div class="seat_heat_ctrls">
+                        <div class="heading">
+                            <div class="close" id="close">X</div>
+                            <span class="title">Seat Heating</span>
+                        </div>
+                        <div class="seats">
+                            <div class="front">
+                                <div class="">
+                                    <img class="steering_wheel" src="images/steering_wheel.svg" alt="">
+                                    <img class="seat" src="images/carseat.svg" alt="">
+                                    <input type="range" class="slider slider1" step="1" min="0" max="3">
+                                    <div class="slider_text">
+                                        <span>off</span>
+                                        <!-- <span>.</span> -->
+                                        <div class="dot"></div>
+                                        <div class="dot"></div>
+                                        <span>max</span>
+                                    </div>
+                                    <p class="seat_text">ON</p>
+                                </div>
+                                <div class="">
+                                    <img style="margin-top: 48px" class="seat" src="images/carseat.svg" alt="">
+                                    <input type="range" class="slider slider2" step="1" min="0" max="3">
+                                    <div class="slider_text">
+                                        <span>off</span>
+                                        <div class="dot"></div>
+                                        <div class="dot"></div>
+                                        <span>max</span>
+                                    </div>
+                                    <p class="seat_text">ON</p>
+                                </div>
+                            </div>
+                            <div class="rear">
+                                <div class="">
+                                    <img class="seat" src="images/carseat.svg" alt="">
+                                    <input type="range" class="slider slider1" step="1" min="0" max="3">
+                                    <div class="slider_text">
+                                        <span>off</span>
+                                        <div class="dot"></div>
+                                        <div class="dot"></div>
+                                        <span>max</span>
+                                    </div>
+                                    <p class="seat_text">ON</p>
+                                </div>
+                                <div class="">
+                                    <img class="seat" src="images/carseat.svg" alt="">
+                                    <input type="range" class="slider slider1" step="1" min="0" max="3">
+                                    <div class="slider_text">
+                                        <span>off</span>
+                                        <div class="dot"></div>
+                                        <div class="dot"></div>
+                                        <span>max</span>
+                                    </div>
+                                    <p class="seat_text">ON</p>
+                                </div>
+                                <div class="">
+                                    <img class="seat" src="images/carseat.svg" alt="">
+                                    <input type="range" class="slider slider1" step="1" min="0" max="3">
+                                    <div class="slider_text">
+                                        <span>off</span>
+                                        <div class="dot"></div>
+                                        <div class="dot"></div>
+                                        <span>max</span>
+                                    </div>
+                                    <p class="seat_text">ON</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="side_mirr_ctrls">
+
+                <div class="car_ctrls_opts">
                     <div class="heading">
                         <div class="close">X</div>
                         <span class="title">Side Mirrors</span>

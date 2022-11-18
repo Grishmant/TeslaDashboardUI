@@ -5,12 +5,19 @@ $(document).ready(function() {
     
     calculateHeightOfListContainer();
 
-    $(".fan").on('click', function(e) {
+    $(".fan, .seat_heat").on('click', function(e) {
         $(".car_ctrls").removeClass('show');
         $(".car_ctrls .container").removeClass('show');
         $(".conn_ctrls").removeClass('show');
         $(".conn_ctrls .container").removeClass('show');
-        $(".fan_ctrls").addClass('show');
+        $(".temp_ctrls_opts").addClass('show');
+        if(e.target.classList.contains("fan") || e.target.parentElement.classList.contains("fan")) {
+            $(".fan_ctrls").addClass('show');
+            $(".seat_heat_ctrls").removeClass('show');
+        } else {
+            $(".seat_heat_ctrls").addClass('show');
+            $(".fan_ctrls").removeClass('show');
+        }
     });
 
     $(".side_mirr").on('click', function(e) {
@@ -18,7 +25,36 @@ $(document).ready(function() {
         $(".temp_ctrls .container").removeClass('show');
         $(".conn_ctrls").removeClass('show');
         $(".conn_ctrls .container").removeClass('show');
-        $(".side_mirr_ctrls").addClass('show');
+        $(".car_ctrls_opts").addClass('show');
+    });
+
+    $('.slider').on('input', function(ev) {
+        let val = ev.target.value;
+        if(val == 0) {
+            let parent = ev.target.parentElement;
+            $(parent).find(".seat").addClass('off');
+            $(parent).find('.seat_text').text('OFF');
+            $(parent).find('.slider').addClass('disabled');
+        } else {
+            let parent = ev.target.parentElement;
+            $(parent).find(".seat").removeClass('off');
+            $(parent).find('.seat_text').text('ON');
+            $(parent).find('.slider').removeClass('disabled');
+            ev.target.style.backgroundSize = (val - 0) * 100 / (3) + '% 100%'
+        }
+    });
+
+    $('.seat').on('click', function(ev) {
+        let parent = ev.target.parentElement;
+        if($(parent).find('.seat_text').text() == 'OFF') {
+            $(parent).find(".seat").removeClass('off');
+            $(parent).find('.seat_text').text('ON');
+            $(parent).find('.slider').removeClass('disabled');
+        } else {
+            $(parent).find(".seat").addClass('off');
+            $(parent).find('.seat_text').text('OFF');
+            $(parent).find('.slider').addClass('disabled');
+        }
     });
 });
 
@@ -43,6 +79,6 @@ function addAllElements() {
     $(".car_ctrls .container").addClass('show');
     $(".conn_ctrls").addClass('show');
     $(".conn_ctrls .container").addClass('show');
-    $(".fan_ctrls").removeClass('show');
-    $(".side_mirr_ctrls").removeClass('show');
+    $(".temp_ctrls_opts").removeClass('show');
+    $(".car_ctrls_opts").removeClass('show');
 }
