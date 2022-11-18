@@ -69,9 +69,22 @@ body .screen {
   background: #E9F1FD;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), -4px -8px 16px rgba(218, 230, 236, 0.5);
   height: 120px;
-  display: flex;
-  align-items: center;
   justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main .left-main .temp_ctrls .options .option img,
+.main .left-main .car_ctrls .options .option img,
+.main .left-main .conn_ctrls .options .option img {
+  width: 70px;
+  height: 70px;
+}
+.main .left-main .temp_ctrls .options .option .metaphor_desc,
+.main .left-main .car_ctrls .options .option .metaphor_desc,
+.main .left-main .conn_ctrls .options .option .metaphor_desc {
+  width: fit-content;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .main .left-main .temp_ctrls {
   top: 0;
@@ -186,7 +199,8 @@ body .screen {
   border-radius: 12px;
 }
 .fan_ctrls,
-.seat_heat_ctrls {
+.seat_heat_ctrls,
+.side_mirror_ctrls {
   width: 100%;
   position: relative;
   display: flex;
@@ -194,7 +208,8 @@ body .screen {
   display: none;
 }
 .fan_ctrls.show,
-.seat_heat_ctrls.show {
+.seat_heat_ctrls.show,
+.side_mirror_ctrls.show {
   display: block;
 }
 .seat_heat_ctrls {

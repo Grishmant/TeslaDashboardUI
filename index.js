@@ -26,6 +26,7 @@ $(document).ready(function() {
         $(".conn_ctrls").removeClass('show');
         $(".conn_ctrls .container").removeClass('show');
         $(".car_ctrls_opts").addClass('show');
+        $(".side_mirror_ctrls").addClass('show');
     });
 
     $('.slider').on('input', function(ev) {
@@ -81,4 +82,7 @@ function addAllElements() {
     $(".conn_ctrls .container").addClass('show');
     $(".temp_ctrls_opts").removeClass('show');
     $(".car_ctrls_opts").removeClass('show');
+    $(".fan_ctrls").removeClass('show');
+    $(".seat_heat_ctrls").removeClass('show');
+    $(".side_mirror_ctrls").removeClass('show');
 }
