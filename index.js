@@ -34,6 +34,9 @@ $(document).ready(function() {
     // seat heat slider
     $('.seat_heat_slider').on('input', function(ev) {
         let val = ev.target.value;
+        let classList = ev.target.classList;
+        let sliderNo = classList.contains('seat1') ? 1 : classList.contains('seat2') ? 2 : classList.contains('seat3') ? 3 : classList.contains('seat4') ? 4 : 5;
+        playAudio(val, sliderNo);
         if(val == 0) {
             let parent = ev.target.parentElement;
             $(parent).find(".seat").addClass('off');
@@ -51,10 +54,12 @@ $(document).ready(function() {
     // fan speed slider
     $('.fan_speed_slider').on('input', function(ev) {
         let val = ev.target.value;
+        var slider1 = ev.target.classList.contains('fan_speed_slider1') ? true : false;
+        playAudio(val, slider1 ? 6 : 7);
         if(val == 0) {
             ev.target.classList.add('disabled');
             ev.target.style.backgroundSize = '0% 100%';
-            if(ev.target.classList.contains('fan_speed_slider1')) {
+            if(slider1) {
                 $('.fan_direction1 .fan_dir_icon').addClass('disable');
             } else {
                 $('.fan_direction2 .fan_dir_icon').addClass('disable');
@@ -62,7 +67,7 @@ $(document).ready(function() {
         } else {
             ev.target.classList.remove('disabled');
             ev.target.style.backgroundSize = (val - 0) * 100 / (4) + '% 100%';
-            if(ev.target.classList.contains('fan_speed_slider1')) {
+            if(slider1) {
                 $('.fan_direction1 .fan_dir_icon').removeClass('disable');
             } else {
                 $('.fan_direction2 .fan_dir_icon').removeClass('disable');
