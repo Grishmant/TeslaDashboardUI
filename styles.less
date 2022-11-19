@@ -104,14 +104,17 @@ body {
                         width: fit-content;
                         font-family: @primary-font;
                     }
-                    .glovebox.selected {
+                    &.selected {
                         background-color: @secondary-color;
+                        img { filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%); }
+                        .metaphor_desc { color: #fff }
                     }
-                }
-                .option.selected {
-                    background-color: @secondary-color;
-                    img { filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%); }
-                    .metaphor_desc { color: #fff }
+                    &.heat.selected {
+                        img { filter: invert(32%) sepia(63%) saturate(1294%) hue-rotate(340deg) brightness(109%) contrast(93%); }
+                    }
+                    &.cool.selected {
+                        img { filter: invert(15%) sepia(26%) saturate(3604%) hue-rotate(194deg) brightness(97%) contrast(92%); }
+                    }
                 }
             }
             

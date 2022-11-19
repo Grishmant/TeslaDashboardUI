@@ -47,6 +47,16 @@ $(document).ready(function() {
         $('.glovebox').toggleClass('selected');
     });
 
+    // Cool and Heat
+    $(".heat").on('click', function() {
+        $('.heat').toggleClass('selected');
+        $(".cool").removeClass('selected');
+    });
+    $(".cool").on('click', function() {
+        $('.cool').toggleClass('selected');
+        $(".heat").removeClass('selected');
+    });
+
     // side mirrors 
     $(".side_mirr").on('click', function(e) {
         $(".option").removeClass("selected");
