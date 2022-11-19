@@ -1,7 +1,7 @@
 // @ts-nocheck
 
 $(document).ready(function() {
-    $(".close").on('click', function() { addAllElements() })
+    $(".close").on('click', function() { addAllElements(); $(".option").removeClass("selected"); })
     
     calculateHeightOfListContainer();
 
@@ -40,6 +40,7 @@ $(document).ready(function() {
         $(".conn_ctrls .container").removeClass('show');
         $(".car_ctrls_opts").addClass('show');
         $(".side_mirror_ctrls").addClass('show');
+        $(this).addClass('selected');
     });
 
     // side mirror controls
