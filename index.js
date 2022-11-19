@@ -32,6 +32,11 @@ $(document).ready(function() {
         }
     });
 
+    // Glove Box
+    $(".glovebox").on('click', function() {
+        $('.glovebox').toggleClass('selected');
+    });
+
     // side mirrors 
     $(".side_mirr").on('click', function(e) {
         $(".temp_ctrls").removeClass('show');
@@ -51,7 +56,7 @@ $(document).ready(function() {
             $(".right_mirror_sel img").css({'width': '180px', 'height': '180px'});
             $(".left_mirror_sel img").css({'width': '180px', 'height': '180px'});
         } else {
-            $(".left_mirror_sel img").css({'filter': 'invert(12%) sepia(100%) saturate(6718%) hue-rotate(239deg) brightness(91%) contrast(125%)'});
+            $(".left_mirror_sel img").css({'filter': 'invert(42%) sepia(41%) saturate(342%) hue-rotate(136deg) brightness(87%) contrast(84%)' });
             $(".left_mirror_sel img").css({'width': '200px', 'height': '200px'});
             $(".right_mirror_sel img").css({'width': '90px', 'height': '90px'});
             $(".right_mirror_sel img").css({'filter': 'none'});
@@ -64,7 +69,7 @@ $(document).ready(function() {
             $(".right_mirror_sel img").css({'width': '180px', 'height': '180px'});
             $(".left_mirror_sel img").css({'width': '180px', 'height': '180px'});
         } else {
-            $(".right_mirror_sel img").css({'filter': 'invert(12%) sepia(100%) saturate(6718%) hue-rotate(239deg) brightness(91%) contrast(125%)'});
+            $(".right_mirror_sel img").css({'filter': 'invert(42%) sepia(41%) saturate(342%) hue-rotate(136deg) brightness(87%) contrast(84%)' });
             $(".right_mirror_sel img").css({'width': '200px', 'height': '200px'});
             $(".left_mirror_sel img").css({'width': '90px', 'height': '90px'});
             $(".left_mirror_sel img").css({'filter': 'none'});

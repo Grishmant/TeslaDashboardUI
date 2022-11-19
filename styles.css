@@ -91,10 +91,25 @@ body .screen {
   width: fit-content;
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
+.main .left-main .temp_ctrls .options .option .glovebox.selected,
+.main .left-main .car_ctrls .options .option .glovebox.selected,
+.main .left-main .conn_ctrls .options .option .glovebox.selected {
+  background-color: #497174;
+}
 .main .left-main .temp_ctrls .options .option.selected,
 .main .left-main .car_ctrls .options .option.selected,
 .main .left-main .conn_ctrls .options .option.selected {
-  background-color: #A3A9B1;
+  background-color: #497174;
+}
+.main .left-main .temp_ctrls .options .option.selected img,
+.main .left-main .car_ctrls .options .option.selected img,
+.main .left-main .conn_ctrls .options .option.selected img {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+.main .left-main .temp_ctrls .options .option.selected .metaphor_desc,
+.main .left-main .car_ctrls .options .option.selected .metaphor_desc,
+.main .left-main .conn_ctrls .options .option.selected .metaphor_desc {
+  color: #fff;
 }
 .main .left-main .temp_ctrls {
   top: 0;
@@ -143,7 +158,7 @@ body .screen {
 }
 .main .left-main .car_ctrls .options .option.selected,
 .main .left-main .conn_ctrls .options .option.selected {
-  background-color: #A3A9B1;
+  background-color: #497174;
 }
 .main .left-main .conn_ctrls .option {
   width: 146px !important;
@@ -301,7 +316,6 @@ body .screen {
 }
 .temp_ctrls_opts.show .close,
 .car_ctrls_opts.show .close {
-  background: #A3A9B1;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), -4px -8px 16px rgba(218, 230, 236, 0.5);
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 900;
@@ -311,6 +325,9 @@ body .screen {
   height: 50px;
   width: 50px;
   border-radius: 12px;
+  color: #000;
+  border: 2px solid #000;
+  font-size: 24px;
 }
 .fan_ctrls,
 .seat_heat_ctrls,
@@ -380,7 +397,7 @@ body .screen {
 }
 .fan_ctrls .front_ctrls .slider,
 .fan_ctrls .rear_ctrls .slider {
-  background-image: linear-gradient(#001AFF, #001AFF) !important;
+  background-image: linear-gradient(#497174, #497174) !important;
   width: 200px;
   background-size: 50% 100%;
 }
@@ -390,7 +407,7 @@ body .screen {
 }
 .fan_ctrls .front_ctrls .slider::-webkit-slider-thumb,
 .fan_ctrls .rear_ctrls .slider::-webkit-slider-thumb {
-  background: #001AFF !important;
+  background: #497174 !important;
 }
 .fan_ctrls .front_ctrls .slider_text,
 .fan_ctrls .rear_ctrls .slider_text {
@@ -403,7 +420,11 @@ body .screen {
 }
 .fan_ctrls .front_ctrls .fan_direction .highlight,
 .fan_ctrls .rear_ctrls .fan_direction .highlight {
-  background-color: #001AFF;
+  background-color: #497174;
+}
+.fan_ctrls .front_ctrls .fan_direction .highlight img,
+.fan_ctrls .rear_ctrls .fan_direction .highlight img {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
 }
 .fan_ctrls .front_ctrls .fan_direction .highlight.disable,
 .fan_ctrls .rear_ctrls .fan_direction .highlight.disable {
@@ -487,7 +508,7 @@ body .screen {
   margin-right: 15px;
   height: 7px;
   background: #A3A9B1;
-  background-image: linear-gradient(#FF3636, #FF3636);
+  background-image: linear-gradient(#497174, #497174);
   border-radius: 5px;
   background-size: 0% 100%;
   background-repeat: no-repeat;
@@ -502,7 +523,7 @@ body .screen {
   height: 20px;
   width: 20px;
   border-radius: 50%;
-  background: #FF3636;
+  background: #497174;
 }
 .slider.disabled::-webkit-slider-thumb {
   background: #A3A9B1 !important;
