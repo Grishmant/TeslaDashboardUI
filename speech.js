@@ -30,9 +30,9 @@ $(document).ready(function() {
     $(".glovebox").on('click', function () {
         let utter;
         if (document.getElementsByClassName('glovebox')[0].classList.contains('selected')) {
-            utter = new SpeechSynthesisUtterance("Glove box closed");
-        } else {
             utter = new SpeechSynthesisUtterance("Glove box opened");
+        } else {
+            utter = new SpeechSynthesisUtterance("Glove box closed");
         }
         window.speechSynthesis.speak(utter);  
     });
