@@ -23,4 +23,30 @@ $(document).ready(function() {
         let utter = new SpeechSynthesisUtterance("Fan Settings");
         window.speechSynthesis.speak(utter);  
     });
+    $(".slider_text").on('click', function () {
+        let utter = new SpeechSynthesisUtterance("Fan Settings");
+        window.speechSynthesis.speak(utter);  
+    });
+    $(".glovebox").on('click', function () {
+        let utter;
+        if (document.getElementsByClassName('glovebox')[0].classList.contains('selected')) {
+            utter = new SpeechSynthesisUtterance("Glove box closed");
+        } else {
+            utter = new SpeechSynthesisUtterance("Glove box opened");
+        }
+        window.speechSynthesis.speak(utter);  
+    });
+    $(".side_mirr").on('click', function () {
+        let utter = new SpeechSynthesisUtterance("Side Mirror adjustment");
+        window.speechSynthesis.speak(utter);  
+    });
+    $(".left_mirror_sel").on('click', function () {
+        let utter = new SpeechSynthesisUtterance("Left mirror selected");
+        window.speechSynthesis.speak(utter);  
+    });
+    $(".right_mirror_sel").on('click', function () {
+        let utter = new SpeechSynthesisUtterance("Right mirror selected");
+        window.speechSynthesis.speak(utter);  
+    });
+
 })
