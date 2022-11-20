@@ -7,19 +7,29 @@ $(document).ready(function() {
 
     $(".fan, .seat_heat").on('click', function(e) {
         $(".option").removeClass("selected");
-        $(".car_ctrls").removeClass('show');
-        $(".car_ctrls .container").removeClass('show');
-        $(".conn_ctrls").removeClass('show');
-        $(".conn_ctrls .container").removeClass('show');
-        $(".temp_ctrls_opts").addClass('show');
-        if(e.target.classList.contains("fan") || e.target.parentElement.classList.contains("fan")) {
-            $(".fan_ctrls").addClass('show');
-            $(".seat_heat_ctrls").removeClass('show');
+        if ($(".temp_ctrls_opts").hasClass("show")) {
+            $(".car_ctrls").addClass('show');
+            $(".car_ctrls .container").addClass('show');
+            $(".conn_ctrls").addClass('show');
+            $(".conn_ctrls .container").addClass('show');
+            $(".temp_ctrls_opts").removeClass('show');
         } else {
-            $(".seat_heat_ctrls").addClass('show');
-            $(".fan_ctrls").removeClass('show');
-        } 
-        $(this).addClass("selected");
+            $(".car_ctrls").removeClass('show');
+            $(".car_ctrls .container").removeClass('show');
+            $(".conn_ctrls").removeClass('show');
+            $(".conn_ctrls .container").removeClass('show');
+            $(".temp_ctrls_opts").addClass('show');
+            if(e.target.classList.contains("fan") || e.target.parentElement.classList.contains("fan")) {
+                $(".fan_ctrls").addClass('show');
+                $(".seat_heat_ctrls").removeClass('show');
+            } else {
+                $(".seat_heat_ctrls").addClass('show');
+                $(".fan_ctrls").removeClass('show');
+            }
+            $(this).addClass("selected");
+        }
+         
+        
     });
 
     // AC temperature
@@ -37,15 +47,35 @@ $(document).ready(function() {
         $('.glovebox').toggleClass('selected');
     });
 
+    // Cool and Heat
+    $(".heat").on('click', function() {
+        $('.heat').toggleClass('selected');
+        $(".cool").removeClass('selected');
+    });
+    $(".cool").on('click', function() {
+        $('.cool').toggleClass('selected');
+        $(".heat").removeClass('selected');
+    });
+
     // side mirrors 
     $(".side_mirr").on('click', function(e) {
-        $(".temp_ctrls").removeClass('show');
-        $(".temp_ctrls .container").removeClass('show');
-        $(".conn_ctrls").removeClass('show');
-        $(".conn_ctrls .container").removeClass('show');
-        $(".car_ctrls_opts").addClass('show');
-        $(".side_mirror_ctrls").addClass('show');
-        $(this).addClass('selected');
+        $(".option").removeClass("selected");
+        if ($(".car_ctrls_opts").hasClass('show')) {
+            $(".temp_ctrls").addClass('show');
+            $(".temp_ctrls .container").addClass('show');
+            $(".conn_ctrls").addClass('show');
+            $(".conn_ctrls .container").addClass('show');
+            $(".car_ctrls_opts").removeClass('show');
+            $(".side_mirror_ctrls").removeClass('show');
+        } else {
+            $(".temp_ctrls").removeClass('show');
+            $(".temp_ctrls .container").removeClass('show');
+            $(".conn_ctrls").removeClass('show');
+            $(".conn_ctrls .container").removeClass('show');
+            $(".car_ctrls_opts").addClass('show');
+            $(".side_mirror_ctrls").addClass('show');
+            $(this).addClass('selected');
+        }
     });
 
     // side mirror controls
