@@ -1,35 +1,41 @@
 // @ts-nocheck
 
 $(document).ready(function() {
-    $(".close").on('click', function() { addAllElements(); $(".option").removeClass("selected"); })
-    
+    $(".close").on('click', function() { addAllElements(); })
     calculateHeightOfListContainer();
 
-    $(".fan, .seat_heat").on('click', function(e) {
-        $(".option").removeClass("selected");
-        if ($(".temp_ctrls_opts").hasClass("show")) {
-            $(".car_ctrls").addClass('show');
-            $(".car_ctrls .container").addClass('show');
-            $(".conn_ctrls").addClass('show');
-            $(".conn_ctrls .container").addClass('show');
-            $(".temp_ctrls_opts").removeClass('show');
+    $(".fan").on('click', function(ev) {
+        if($(".fan_ctrls").hasClass('show')) {
+            addAllElements();
         } else {
+            $(".fan_ctrls").addClass('show');
+            $(".temp_ctrls_opts").addClass('show');
+            $(".fan").addClass('selected');
+            $(".seat_heat").removeClass('selected');
+            $(".seat_heat_ctrls").removeClass('show');
+
             $(".car_ctrls").removeClass('show');
             $(".car_ctrls .container").removeClass('show');
             $(".conn_ctrls").removeClass('show');
             $(".conn_ctrls .container").removeClass('show');
-            $(".temp_ctrls_opts").addClass('show');
-            if(e.target.classList.contains("fan") || e.target.parentElement.classList.contains("fan")) {
-                $(".fan_ctrls").addClass('show');
-                $(".seat_heat_ctrls").removeClass('show');
-            } else {
-                $(".seat_heat_ctrls").addClass('show');
-                $(".fan_ctrls").removeClass('show');
-            }
-            $(this).addClass("selected");
         }
-         
-        
+    });
+
+    $(".seat_heat").on('click', function(ev) {
+        if($(".seat_heat_ctrls").hasClass('show')) {
+            addAllElements();
+        } else {
+            $(".seat_heat_ctrls").addClass('show');
+            $(".temp_ctrls_opts").addClass('show');
+            $(".seat_heat").addClass('selected');
+            $(".fan").removeClass('selected');
+            $(".fan_ctrls").removeClass('show');
+
+            $(".car_ctrls").removeClass('show');
+            $(".car_ctrls .container").removeClass('show');
+            $(".conn_ctrls").removeClass('show');
+            $(".conn_ctrls .container").removeClass('show');
+        }
     });
 
     // AC temperature
@@ -59,14 +65,14 @@ $(document).ready(function() {
 
     // side mirrors 
     $(".side_mirr").on('click', function(e) {
-        $(".option").removeClass("selected");
         if ($(".car_ctrls_opts").hasClass('show')) {
+            $(".car_ctrls_opts").removeClass('show');
+            $(".side_mirror_ctrls").removeClass('show');
+            $(".side_mirr").removeClass('selected');
             $(".temp_ctrls").addClass('show');
             $(".temp_ctrls .container").addClass('show');
             $(".conn_ctrls").addClass('show');
             $(".conn_ctrls .container").addClass('show');
-            $(".car_ctrls_opts").removeClass('show');
-            $(".side_mirror_ctrls").removeClass('show');
         } else {
             $(".temp_ctrls").removeClass('show');
             $(".temp_ctrls .container").removeClass('show');
@@ -190,14 +196,17 @@ function calculateHeightOfListContainer(){
 };
 
 function addAllElements() {
+    $(".temp_ctrls_opts").removeClass('show');
+    $(".car_ctrls_opts").removeClass('show');
+    $(".seat_heat").removeClass('selected');
+    $(".fan").removeClass('selected');
+    $(".side_mirr").removeClass('selected');
     $(".temp_ctrls").addClass('show');
     $(".temp_ctrls .container").addClass('show');
     $(".car_ctrls").addClass('show');
     $(".car_ctrls .container").addClass('show');
     $(".conn_ctrls").addClass('show');
     $(".conn_ctrls .container").addClass('show');
-    $(".temp_ctrls_opts").removeClass('show');
-    $(".car_ctrls_opts").removeClass('show');
     $(".fan_ctrls").removeClass('show');
     $(".seat_heat_ctrls").removeClass('show');
     $(".side_mirror_ctrls").removeClass('show');
