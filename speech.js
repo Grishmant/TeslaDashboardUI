@@ -1,15 +1,30 @@
 $(document).ready(function() {
     $(".seat_heat").on('click', function () {
-        let utter = new SpeechSynthesisUtterance("Seat Heat");
-        window.speechSynthesis.speak(utter);  
+        if($(".seat_heat_ctrls").hasClass('show')) {
+            let utter = new SpeechSynthesisUtterance("Seat Heating options open");
+            window.speechSynthesis.speak(utter);  
+        } else {
+            let utter = new SpeechSynthesisUtterance("Seat Heating options closed");
+            window.speechSynthesis.speak(utter);
+        }
     });
     $(".heat").on('click', function () {
-        let utter = new SpeechSynthesisUtterance("Heat");
-        window.speechSynthesis.speak(utter);  
+        if($(".heat").hasClass("selected")) {
+            let utter = new SpeechSynthesisUtterance("car heating turned on");
+            window.speechSynthesis.speak(utter);
+        } else {
+            let utter = new SpeechSynthesisUtterance("car heating turned off");
+            window.speechSynthesis.speak(utter);
+        }
     });
     $(".cool").on('click', function () {
-        let utter = new SpeechSynthesisUtterance("Cool");
-        window.speechSynthesis.speak(utter);  
+        if($(".cool").hasClass("selected")) {
+            let utter = new SpeechSynthesisUtterance("air conditioning turned on");
+            window.speechSynthesis.speak(utter);
+        } else {
+            let utter = new SpeechSynthesisUtterance("air conditioning turned off");
+            window.speechSynthesis.speak(utter);
+        }
     });
     $(".left_arr").on('click', function () {
         let utter = new SpeechSynthesisUtterance("Temperature decreased");
@@ -20,8 +35,13 @@ $(document).ready(function() {
         window.speechSynthesis.speak(utter);  
     });
     $(".fan").on('click', function () {
-        let utter = new SpeechSynthesisUtterance("Fan Settings");
-        window.speechSynthesis.speak(utter);  
+        if($(".fan").hasClass("selected")) {
+            let utter = new SpeechSynthesisUtterance("Fan settings open");
+            window.speechSynthesis.speak(utter);
+        } else {
+            let utter = new SpeechSynthesisUtterance("fan settings closed");
+            window.speechSynthesis.speak(utter);
+        }
     });
     $(".slider_text").on('click', function () {
         let utter = new SpeechSynthesisUtterance("Fan Settings");
@@ -37,16 +57,25 @@ $(document).ready(function() {
         window.speechSynthesis.speak(utter);  
     });
     $(".side_mirr").on('click', function () {
-        let utter = new SpeechSynthesisUtterance("Side Mirror adjustment");
-        window.speechSynthesis.speak(utter);  
+        if($(".side_mirr").hasClass("selected")) {
+            let utter = new SpeechSynthesisUtterance("side mirror adjustment open");
+            window.speechSynthesis.speak(utter);
+        } else {
+            let utter = new SpeechSynthesisUtterance("side mirror adjustment closed");
+            window.speechSynthesis.speak(utter);
+        }  
     });
     $(".left_mirror_sel").on('click', function () {
-        let utter = new SpeechSynthesisUtterance("Left mirror selected");
-        window.speechSynthesis.speak(utter);  
+        if(($('.left_mirror_sel img').width() == 200)) {
+            let utter = new SpeechSynthesisUtterance("left mirror selected, start adjusting");
+            window.speechSynthesis.speak(utter);
+        }
     });
     $(".right_mirror_sel").on('click', function () {
-        let utter = new SpeechSynthesisUtterance("Right mirror selected");
-        window.speechSynthesis.speak(utter);  
+        if(($('.right_mirror_sel img').width() == 200)) {
+            let utter = new SpeechSynthesisUtterance("right mirror selected, start adjusting");
+            window.speechSynthesis.speak(utter);
+        } 
     });
 
 })
