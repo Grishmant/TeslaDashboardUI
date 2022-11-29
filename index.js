@@ -179,6 +179,16 @@ $(document).ready(function() {
             $(parent).find('.seat_heat_slider').addClass('disabled');
         }
     });
+
+    $("#help").on('click', function() {
+        $(".main").css({'display': 'none'});
+        $("#help_document").css({'display': 'block'});
+    });
+
+    $("#close_doc").on('click', function() {
+        $(".main").css({'display': 'flex'});
+        $("#help_document").css({'display': 'none'});
+    });
 });
 
 function calculateHeightOfListContainer(){

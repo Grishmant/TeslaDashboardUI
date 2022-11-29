@@ -130,7 +130,7 @@ body .screen {
 .main .left-main .temp_ctrls .options .option.cool.selected img,
 .main .left-main .car_ctrls .options .option.cool.selected img,
 .main .left-main .conn_ctrls .options .option.cool.selected img {
-  filter: invert(15%) sepia(26%) saturate(3604%) hue-rotate(194deg) brightness(97%) contrast(92%);
+  filter: invert(34%) sepia(87%) saturate(382%) hue-rotate(161deg) brightness(98%) contrast(95%);
 }
 .main .left-main .temp_ctrls {
   top: 0;
@@ -277,6 +277,23 @@ body .screen {
 .main .right-main .footer img {
   width: 35px;
   height: 35px;
+}
+#help_document {
+  display: none;
+  position: relative;
+  margin-top: 12px;
+}
+#help_document #close_doc {
+  position: absolute;
+  background-color: #E9F1FD;
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 25px;
+  margin-left: 12px;
+}
+#help_document > #document {
+  height: 685px;
+  width: 1150px;
 }
 .temp_ctrls,
 .car_ctrls,

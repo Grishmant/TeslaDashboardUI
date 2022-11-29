@@ -113,7 +113,8 @@ body {
                         img { filter: invert(32%) sepia(63%) saturate(1294%) hue-rotate(340deg) brightness(109%) contrast(93%); }
                     }
                     &.cool.selected {
-                        img { filter: invert(15%) sepia(26%) saturate(3604%) hue-rotate(194deg) brightness(97%) contrast(92%); }
+                        img { filter: invert(34%) sepia(87%) saturate(382%) hue-rotate(161deg) brightness(98%) contrast(95%); }
+                        // img { filter: invert(37%) sepia(57%) saturate(579%) hue-rotate(161deg) brightness(92%) contrast(92%); }
                     }
                 }
             }
@@ -255,6 +256,24 @@ body {
                 height: 35px;
             }
         }
+    }
+}
+
+#help_document {
+    display: none;
+    position: relative;
+    margin-top: 12px;
+    #close_doc {
+        position: absolute;
+        background-color: @primary-color;
+        border-radius: 12px;
+        padding: 15px;
+        margin-top: 25px;
+        margin-left: 12px;
+    }
+    > #document {
+        height: 685px;
+        width: 1150px;
     }
 }
 
